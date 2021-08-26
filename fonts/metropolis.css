@@ -1,0 +1,44 @@
+/* Metropolis */
+@font-face {
+  font-family: "Metropolis";
+  font-style: normal;
+  font-weight: 300;
+  src: url("../fonts/Metropolis-Light.eot");
+  src: url("../fonts/Metropolis-Light.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Metropolis-Light.woff") format("woff"),
+    url("../fonts/Metropolis-Light.ttf") format("truetype");
+  src: local("?"), url("../fonts/Metropolis-Light.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Metropolis";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/Metropolis-Regular.eot");
+  src: url("../fonts/Metropolis-Regular.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Metropolis-Regular.woff") format("woff"),
+    url("../fonts/Metropolis-Regular.ttf") format("truetype");
+  src: local("?"), url("../fonts/Metropolis-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Metropolis";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/Metropolis-Medium.eot");
+  src: url("../fonts/Metropolis-Medium.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Metropolis-Medium.woff") format("woff"),
+    url("../fonts/Metropolis-Medium.ttf") format("truetype");
+  src: local("?"), url("../fonts/Metropolis-Medium.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Metropolis";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/Metropolis-Bold.eot");
+  src: url("../fonts/Metropolis-Bold.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Metropolis-Bold.woff") format("woff"),
+    url("../fonts/Metropolis-Bold.ttf") format("truetype");
+  src: local("?"), url("../fonts/Metropolis-Bold.woff") format("woff");
+}
