@@ -1,21 +1,28 @@
+$(document).ready(function() {
+    $('.go-top').click(function(event) {
+        event.preventDefault();
+        var tgY = $('body').offset().top;
+        $('html, body').animate({
+            scrollTop: tgY,
+        });
+    });
+});
+
 window.onload = function() {
     var sw_main = new Swiper('.sw-main', {
+      speed: 1000,
         navigation: {
             prevEl: '.sw-main__prev',
             nextEl: '.sw-main__next',
         },
     });
 
-    var sw_sci_pg = ["HYBRID Z SPRING", "5 ZERO SYSTEM", "NEW MATERIAL", "ECO & HEALTH"];
     var sw_sci = new Swiper('.sw-sci', {
+      speed: 1000,
         pagination: {
           el: '.sw-sci-pg',
           clickable: true,
-          renderBullet: function (index, className) {
-            return '<div class="' + className + '"><span>' + (sw_sci_pg[index]) + '</span></div>';
-          },
         },
-        speed: 1000,
         navigation: {
             prevEl: '.sw-sci__prev',
             nextEl: '.sw-sci__next',
