@@ -41,14 +41,10 @@ window.onload = function() {
         },
     });
 
-    var sw_sci_pg = ["HYBRID Z SPRING", "5 ZERO SYSTEM", "NEW MATERIAL", "ECO & HEALTH"];
     var sw_news = new Swiper('.sw-news', {
         pagination: {
           el: '.sw-news-pg',
           clickable: true,
-          renderBullet: function (index, className) {
-            return '<div class="' + className + '"><span>' + (sw_news_pg[index]) + '</span></div>';
-          },
         },
     });
-  };
+};
