@@ -33,7 +33,7 @@ body {
   /* padding-top: 200px; */
 }
 
-/* 공통 클래스 */
+/* Common Class */
 .clearfix::after {
   content: "";
   position: relative;
@@ -50,7 +50,7 @@ body {
 .wrap {
   position: relative;
   display: block;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 /* HEADER */
@@ -416,30 +416,37 @@ body {
   display: block;
 }
 
-.sw-sci-tab {
+.sw-sci__pg {
   position: absolute;
   top: 50%;
   left: 0;
   transform: translateY(-50%);
   display: block;
+  width: 300px;
+  height: 150px;
+  opacity: 1;
+  z-index: 9;
 }
 
-.sw-sci__menu {
+.sw-sci__pg .swiper-pagination-bullet {
   position: relative;
   display: block;
+  width: 100%;
   height: 17px;
-  font-size: 16px;
+  font-size: 16px !important;
   letter-spacing: 1px;
   color: #999;
-  cursor: pointer;
+  background: red;
+  opacity: 1;
   margin-bottom: 27px;
+  transition: all 0.5s;
 }
 
-.sw-sci__menu:last-child {
+.sw-sci__pg .swiper-pagination-bullet:last-child {
   margin-bottom: 0;
 }
 
-.sw-sci__menu--focused {
+.sw-sci__pg .swiper-pagination-bullet-active {
   font-size: 22px;
   font-weight: bold;
   color: #0890c0;
@@ -593,6 +600,7 @@ body {
   font-size: 22px;
   vertical-align: middle;
   color: #888;
+  cursor: pointer;
 }
 
 .coll__menu--focused {
@@ -600,7 +608,7 @@ body {
   color: #0890c0;
 }
 
-.coll-tab span {
+.coll-tab__bar {
   position: relative;
   display: inline-block;
   width: 2px;
@@ -618,6 +626,10 @@ body {
 
 .coll-new-swiper {
   display: block;
+}
+
+.coll-reco-swiper {
+  display: none;
 }
 
 .sw-coll {
@@ -654,7 +666,7 @@ body {
 }
 
 .sw-coll .swiper-slide-active::after {
-  background: rgba(0, 0, 0, 0);
+  background: transparent;
 }
 
 .sw-coll__img {
@@ -687,7 +699,7 @@ body {
   color: #fff;
   z-index: 9;
   opacity: 0;
-  transition: all 2s;
+  transition: all 2s 0.5s;
 }
 
 .swiper-slide-active .coll-txt-area {
@@ -731,15 +743,39 @@ body {
   display: block;
   width: 108px;
   text-align: center;
-  border: 1px solid #fff;
   padding: 0 29px;
   margin-top: 60px;
-  transition: all 0.4s;
+  overflow: hidden;
 }
 
-.coll-view-btn:hover {
-  border: 1px solid transparent;
+.coll-view-btn::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #fff;
+  box-sizing: border-box;
+}
+
+.coll-view-btn::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 100%;
+  display: block;
+  width: 100%;
+  height: 100%;
   background: #0890c0;
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+.coll-view-btn:hover::after {
+  top: 0;
+  opacity: 1;
 }
 
 .coll__view {
@@ -749,10 +785,7 @@ body {
   font-weight: 500;
   line-height: 50px;
   color: #fff;
-}
-
-.coll-reco-swiper {
-  display: none;
+  z-index: 9;
 }
 
 .sw-coll-nav {
@@ -805,7 +838,7 @@ body {
   margin: 0 auto;
 }
 
-.sw-coll-sb {
+.sw-coll__sb {
   position: relative;
   display: block;
   width: 1280px;
@@ -814,7 +847,7 @@ body {
   margin: 0 auto;
 }
 
-.sw-coll-sb .swiper-scrollbar-drag {
+.sw-coll__sb .swiper-scrollbar-drag {
   width: 33.33%;
   background: #0890c0;
 }
@@ -1257,10 +1290,15 @@ body {
 
 /* SIDE BUTTON */
 .side-btn {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   right: 0;
   display: block;
+  z-index: 99999;
+}
+
+.side-btn-abs {
+  position: absolute;
 }
 
 .go-top {
@@ -1269,6 +1307,13 @@ body {
   width: 80px;
   height: 50px;
   text-align: center;
+  cursor: pointer;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.go-top-show {
+  opacity: 1;
 }
 
 .go-top span {
@@ -1289,6 +1334,12 @@ body {
   text-align: center;
   line-height: 80px;
   background: #f0f0f0;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.quick:hover {
+  background: #0890c0;
 }
 
 .quick span {
@@ -1309,6 +1360,10 @@ body {
   background: #919191;
 }
 
+.quick:hover span::before {
+  background: #fff;
+}
+
 .quick span::after {
   content: "";
   position: absolute;
@@ -1319,6 +1374,10 @@ body {
   width: 28px;
   height: 2px;
   background: #919191;
+}
+
+.quick:hover span::after {
+  background: #fff;
 }
 
 /* FOOTER */
@@ -1384,11 +1443,24 @@ body {
   width: 240px;
 }
 
+.family__btn {
+  position: relative;
+  display: block;
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 0.4px;
+  color: #333;
+  padding: 15px 0;
+  background: url("../images/family-open.png") no-repeat right center;
+  border-bottom: 2px solid #000;
+  cursor: pointer;
+}
+
 .family-link-box {
   position: absolute;
   bottom: 0;
   left: 0;
-  display: block;
+  display: none;
   width: 100%;
   background: #000;
   padding: 14px 20px;
@@ -1414,7 +1486,7 @@ body {
   padding-bottom: 0;
 }
 
-.family__close {
+.family__close-btn {
   position: absolute;
   bottom: 14px;
   right: 12px;
@@ -1422,16 +1494,5 @@ body {
   width: 80px;
   height: 16px;
   background: url("../images/family-close.png") no-repeat right center;
-}
-
-.family__open {
-  position: relative;
-  display: block;
-  font-size: 16px;
-  font-weight: 300;
-  letter-spacing: 0.4px;
-  color: #333;
-  padding: 15px 0;
-  background: url("../images/family-open.png") no-repeat right center;
-  border-bottom: 2px solid #000;
+  cursor: pointer;
 }
