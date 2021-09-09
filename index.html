@@ -11,9 +11,11 @@
   <title>에이스침대</title>
   <!--[if lt IE 9]><script src="js/html5shiv.js"></script><![endif]-->
   <!-- <script src="js/prefixfree.min.js"></script> -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script src="js/respond.min.js"></script>
   <script src="js/jquery.min.js"></script>
   <script src="js/swiper/swiper.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
   <link rel="stylesheet" href="js/swiper/swiper.min.css">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
@@ -54,8 +56,97 @@
               <li><a href="#">매장안내</a></li>
             </ul>
           </nav>
-          <a href="#" class="header__icon header__icon--srch">검색</a>
-          <a href="#" class="header__icon header__icon--menu">전체메뉴</a>
+          <span class="header__icon header__icon--srch">검색</span>
+          <span class="header__icon header__icon--menu">전체메뉴</span>
+        </div>
+        <div class="srch"></div>
+        <div class="all all--open">
+          <div class="all-left">
+            <div class="all-lang">
+              <a href="#">KOR</a>
+              <a href="#">ENG</a>
+            </div>
+            <div class="all-cate-area">
+              <div class="all-cate all-cate-1">
+                <p class="all-cate-img">
+                  <img src="images/all-menu-visual1.jpg" alt="카테고리 배경" class="only-web">
+                  <img src="images/m-all-menu-visual1.jpg" alt="카테고리 배경" class="only-mob">
+                </p>
+                <div class="all-cate-txt">
+                  <div class="all-cate-main">
+                    <span>BED</span>
+                    <p class="all-cate__line">
+                      <span></span>
+                    </p>
+                  </div>
+                  <div class="all-cate-sub">
+                    <a href="#">프레임</a>
+                    <a href="#">매트리스</a>
+                    <a href="#">신제품</a>
+                  </div>
+                </div>
+              </div>
+              <div class="all-cate all-cate-2">
+                <p class="all-cate-img">
+                  <img src="images/all-menu-visual2.jpg" alt="카테고리 배경" class="only-web">
+                  <img src="images/m-all-menu-visual2.jpg" alt="카테고리 배경" class="only-mob">
+                </p>
+                <div class="all-cate-txt">
+                  <div class="all-cate-main">
+                    <span>FURNITURE</span>
+                    <p class="all-cate__line">
+                      <span></span>
+                    </p>
+                  </div>
+                  <div class="all-cate-sub">
+                    <a href="#">룸 세트</a>
+                    <a href="#">리빙가구</a>
+                  </div>
+                </div>
+              </div>
+              <div class="all-cate all-cate-3">
+                <p class="all-cate-img">
+                  <img src="images/all-menu-visual3.jpg" alt="카테고리 배경" class="only-web">
+                  <img src="images/m-all-menu-visual3.jpg" alt="카테고리 배경" class="only-mob">
+                </p>
+                <div class="all-cate-txt">
+                  <div class="all-cate-main">
+                    <span>STRESSLESS</span>
+                    <p class="all-cate__line">
+                      <span></span>
+                    </p>
+                  </div>
+                  <div class="all-cate-sub">
+                    <a href="#">1인용 리클라이너</a>
+                    <a href="#">오피스체어</a>
+                    <a href="#">소파</a>
+                    <a href="#">테이블&악세서리</a>
+                  </div>
+                </div>
+              </div>
+              <div class="all-cate all-cate-4">
+                <p class="all-cate-img">
+                  <img src="images/all-menu-visual4.jpg" alt="카테고리 배경" class="only-web">
+                  <img src="images/m-all-menu-visual4.jpg" alt="카테고리 배경" class="only-mob">
+                </p>
+                <div class="all-cate-txt">
+                  <div class="all-cate-main">
+                    <span>SLEEP CARE</span>
+                    <p class="all-cate__line">
+                      <span></span>
+                    </p>
+                  </div>
+                  <div class="all-cate-sub">
+                    <a href="#">마이크로케어</a>
+                    <a href="#">스마트슬리브</a>
+                    <a href="#">보이로패드</a>
+                    <a href="#">마이크로가드 eco</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="all-right"></div>
         </div>
       </div>
     </header>
@@ -210,7 +301,7 @@
           </div>
           <div class="coll-main">
             <div class="coll-new-swiper">
-              <div class="swiper-container sw-coll">
+              <div class="swiper-container sw-coll sw-coll-new">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide">
                     <span class="sw-coll__img">
@@ -269,7 +360,7 @@
               </div>
             </div>
             <div class="coll-reco-swiper">
-              <div class="swiper-container sw-coll">
+              <div class="swiper-container sw-coll sw-coll-reco">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide">
                     <span class="sw-coll__img">
@@ -327,9 +418,12 @@
                 </div>
               </div>
             </div>
-            <div class="sw-coll__prev"></div>
-            <div class="sw-coll__next"></div>
-            <div class="swiper-scrollbar sw-coll__sb"></div>
+            <div class="sw-coll-new__prev"></div>
+            <div class="sw-coll-new__next"></div>
+            <div class="swiper-scrollbar sw-coll-new__sb"></div>
+            <div class="sw-coll-reco__prev"></div>
+            <div class="sw-coll-reco__next"></div>
+            <div class="swiper-scrollbar sw-coll-reco__sb"></div>
           </div>
         </section>
         <!--// ACE COLLECTION -->

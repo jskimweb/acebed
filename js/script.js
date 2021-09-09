@@ -13,6 +13,61 @@ window.onload = function () {
     lastScrollTop = st;
   });
 
+  // all-cate hover
+  $('.all-cate-1 .all-cate-main>span').mouseover(function () {
+    $('.all-cate-1 .all-cate-img').css('opacity', '1');
+    $('.all-cate-1 .all-cate-img img').css('transform', 'scale(1)');
+    $('.all-cate-1 .all-cate__line>span').css('width', '100%');
+    $('.all-cate-1 .all-cate-sub').stop().fadeIn(400);
+  });
+  $('.all-cate-2 .all-cate-main>span').mouseover(function () {
+    $('.all-cate-2 .all-cate-img').css('opacity', '1');
+    $('.all-cate-2 .all-cate-img img').css('transform', 'scale(1)');
+    $('.all-cate-2 .all-cate__line>span').css('width', '100%');
+    $('.all-cate-2 .all-cate-sub').stop().fadeIn(400);
+  });
+  $('.all-cate-3 .all-cate-main>span').mouseover(function () {
+    $('.all-cate-3 .all-cate-img').css('opacity', '1');
+    $('.all-cate-3 .all-cate-img img').css('transform', 'scale(1)');
+    $('.all-cate-3 .all-cate__line>span').css('width', '100%');
+    $('.all-cate-3 .all-cate-sub').stop().fadeIn(400);
+  });
+  $('.all-cate-4 .all-cate-main>span').mouseover(function () {
+    $('.all-cate-4 .all-cate-img').css('opacity', '1');
+    $('.all-cate-4 .all-cate-img img').css('transform', 'scale(1)');
+    $('.all-cate-4 .all-cate__line>span').css('width', '100%');
+    $('.all-cate-4 .all-cate-sub').stop().fadeIn(400);
+  });
+
+  $('.all-cate-1 .all-cate-main>span').mouseout(function () {
+    $('.all-cate .all-cate-img').css('opacity', '0');
+    $('.all-cate-1 .all-cate-img').css('opacity', '1');
+    $('.all-cate-1 .all-cate-img img').css('transform', 'scale(1.07)');
+    $('.all-cate-1 .all-cate__line>span').css('width', '0');
+    $('.all-cate-1 .all-cate-sub').stop().hide();
+  });
+  $('.all-cate-2 .all-cate-main>span').mouseout(function () {
+    $('.all-cate .all-cate-img').css('opacity', '0');
+    $('.all-cate-1 .all-cate-img').css('opacity', '1');
+    $('.all-cate-2 .all-cate-img img').css('transform', 'scale(1.07)');
+    $('.all-cate-2 .all-cate__line>span').css('width', '0');
+    $('.all-cate-2 .all-cate-sub').stop().hide();
+  });
+  $('.all-cate-3 .all-cate-main>span').mouseout(function () {
+    $('.all-cate .all-cate-img').css('opacity', '0');
+    $('.all-cate-1 .all-cate-img').css('opacity', '1');
+    $('.all-cate-3 .all-cate-img img').css('transform', 'scale(1.07)');
+    $('.all-cate-3 .all-cate__line>span').css('width', '0');
+    $('.all-cate-3 .all-cate-sub').stop().hide();
+  });
+  $('.all-cate-4 .all-cate-main>span').mouseout(function () {
+    $('.all-cate .all-cate-img').css('opacity', '0');
+    $('.all-cate-1 .all-cate-img').css('opacity', '1');
+    $('.all-cate-4 .all-cate-img img').css('transform', 'scale(1.07)');
+    $('.all-cate-4 .all-cate__line>span').css('width', '0');
+    $('.all-cate-4 .all-cate-sub').stop().hide();
+  });
+
   // main slide
   new Swiper('.sw-main', {
     speed: 1000,
@@ -66,33 +121,60 @@ window.onload = function () {
   });
 
   // ace collection slide
-  new Swiper('.sw-coll', {
+  var sw_coll_new = new Swiper('.sw-coll-new', {
     spaceBetween: 50,
     speed: 1000,
     navigation: {
-      prevEl: '.sw-coll__prev',
-      nextEl: '.sw-coll__next',
+      prevEl: '.sw-coll-new__prev',
+      nextEl: '.sw-coll-new__next',
     },
     scrollbar: {
-      el: '.sw-coll__sb',
+      el: '.sw-coll-new__sb',
+      hide: false,
     },
     observer: true,
     observeParents: true,
   });
 
-  // ace collection show/hide
+  var sw_coll_reco = new Swiper('.sw-coll-reco', {
+    spaceBetween: 50,
+    speed: 1000,
+    navigation: {
+      prevEl: '.sw-coll-reco__prev',
+      nextEl: '.sw-coll-reco__next',
+    },
+    scrollbar: {
+      el: '.sw-coll-reco__sb',
+      hide: false,
+    },
+    observer: true,
+    observeParents: true,
+  });
+
   $('.coll__menu-new').click(function () {
-    $('.coll__menu-new').addClass('coll__menu--focused');
-    $('.coll__menu-reco').removeClass('coll__menu--focused');
+    $(this).addClass('coll__menu--focused');
     $('.coll-new-swiper').show();
+    $('.sw-coll-new__prev').show();
+    $('.sw-coll-new__next').show();
+    $('.sw-coll-new__sb').show();
+    $('.coll__menu-reco').removeClass('coll__menu--focused');
     $('.coll-reco-swiper').hide();
+    $('.sw-coll-reco__prev').hide();
+    $('.sw-coll-reco__next').hide();
+    $('.sw-coll-reco__sb').hide();
   });
 
   $('.coll__menu-reco').click(function () {
-    $('.coll__menu-new').removeClass('coll__menu--focused');
-    $('.coll__menu-reco').addClass('coll__menu--focused');
-    $('.coll-new-swiper').hide();
+    $(this).addClass('coll__menu--focused');
     $('.coll-reco-swiper').show();
+    $('.sw-coll-reco__prev').show();
+    $('.sw-coll-reco__next').show();
+    $('.sw-coll-reco__sb').show();
+    $('.coll__menu-new').removeClass('coll__menu--focused');
+    $('.coll-new-swiper').hide();
+    $('.sw-coll-new__prev').hide();
+    $('.sw-coll-new__next').hide();
+    $('.sw-coll-new__sb').hide();
   });
 
   // news slide
