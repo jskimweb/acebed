@@ -13,6 +13,28 @@ window.onload = function () {
     lastScrollTop = st;
   });
 
+  // srch open & close
+  var srch_open = $('.header__icon--srch');
+  srch_open.click(function() {
+    $('.srch').slideDown();
+    $('.black-bg').show();
+  });
+  $('.srch__close').click(function() {
+    $('.srch').slideUp();
+    $('.black-bg').hide();
+  });
+
+  // all open & close
+  var all_open = $('.header__icon--all');
+  all_open.click(function() {
+    $('.all').addClass('all--open');
+    $('html').addClass('lock');
+  });
+  $('.all__close').click(function() {
+    $('.all').removeClass('all--open');
+    $('html').removeClass('lock');
+  });
+
   // all-cate hover
   $('.all-cate-1 .all-cate-main>span').mouseover(function () {
     $('.all-cate-1 .all-cate-img').css('opacity', '1');
