@@ -193,7 +193,8 @@ body {
 }
 
 .dep01 {
-  transition: all .4s ease;
+  width: auto;
+  transition: all .4s ease-out;
 }
 
 .gnb01 .dep01 {
@@ -252,6 +253,7 @@ body {
 }
 
 .dep02>a>span {
+  position: relative;
   display: inline-block;
   font-size: 1.5rem;
   font-weight: 400;
@@ -259,6 +261,22 @@ body {
   white-space: nowrap;
   color: #666;
   z-index: 9;
+}
+
+.dep02>a>span::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: .5rem;
+  width: 0;
+  height: .4rem;
+  background-color: #d6eff8;
+  z-index: -9;
+  transition: all .4s ease-out;
+}
+
+.dep02>a>span:hover::before {
+  width: 100%;
 }
 
 .srch__btn {
@@ -707,8 +725,8 @@ body {
   top: 50%;
   transform: translateY(-50%);
   display: block;
-  width: 8rem;
-  height: 13.5rem;
+  width: 7rem;
+  height: 15rem;
   background: none;
   border: 0;
   cursor: pointer;
@@ -719,20 +737,54 @@ body {
   display: none;
 }
 
-.sw-main__prev::before,
-.sw-sci__prev::before,
-.sw-coll-new__prev::before,
-.sw-coll-reco__prev::before {
-  content: "";
-  display: block;
-  width: .4rem;
-  height: 100%;
-  background-color: #c9c9c9;
-  margin: 0 auto;
+.sw-main__prev svg,
+.sw-sci__prev svg,
+.sw-coll-new__prev svg,
+.sw-coll-reco__prev svg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 5rem;
+  height: 15rem;
 }
 
-.swiper-button-disabled::before {
-  background-color: #ececec !important;
+.sw-main__prev path,
+.sw-sci__prev path,
+.sw-coll-new__prev path,
+.sw-coll-reco__prev path {
+  stroke: #c9c9c9;
+  stroke-width: 4;
+  stroke-linecap: round;
+  fill: transparent;
+  transition: 1s;
+}
+
+.sw-main__prev span,
+.sw-sci__prev span,
+.sw-coll-new__prev span,
+.sw-coll-reco__prev span {
+  position: absolute;
+  right: -1rem;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: .1rem;
+  color: #333;
+  opacity: 0;
+}
+
+.sw-coll-new__prev span,
+.sw-coll-reco__prev span {
+  color: #fff;
+}
+
+.sw-main__prev:hover span,
+.sw-sci__prev:hover span,
+.sw-coll-new__prev:hover span,
+.sw-coll-reco__prev:hover span {
+  opacity: 1;
 }
 
 .sw-main__next,
@@ -744,8 +796,8 @@ body {
   top: 50%;
   transform: translateY(-50%);
   display: block;
-  width: 8rem;
-  height: 13.5rem;
+  width: 7rem;
+  height: 15rem;
   background: none;
   border: 0;
   cursor: pointer;
@@ -756,16 +808,66 @@ body {
   display: none;
 }
 
-.sw-main__next::before,
-.sw-sci__next::before,
-.sw-coll-new__next::before,
-.sw-coll-reco__next::before {
-  content: "";
-  display: block;
-  width: .4rem;
-  height: 100%;
-  background: #c9c9c9;
-  margin: 0 auto;
+.sw-main__next svg,
+.sw-sci__next svg,
+.sw-coll-new__next svg,
+.sw-coll-reco__next svg {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 5rem;
+  height: 15rem;
+}
+
+.sw-main__next path,
+.sw-sci__next path,
+.sw-coll-new__next path,
+.sw-coll-reco__next path {
+  stroke: #c9c9c9;
+  stroke-width: 4;
+  stroke-linecap: round;
+  fill: transparent;
+  transition: 1s;
+}
+
+.sw-main__next span,
+.sw-sci__next span,
+.sw-coll-new__next span,
+.sw-coll-reco__next span {
+  position: absolute;
+  left: -1rem;
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: .1rem;
+  color: #333;
+  opacity: 0;
+}
+
+.sw-coll-new__next span,
+.sw-coll-reco__next span {
+  color: #fff;
+}
+
+.sw-main__next:hover span,
+.sw-sci__next:hover span,
+.sw-coll-new__next:hover span,
+.sw-coll-reco__next:hover span {
+  opacity: 1;
+}
+
+.swiper-button-disabled {
+  cursor: initial;
+}
+
+.swiper-button-disabled path {
+  stroke: #ececec;
+}
+
+.swiper-button-disabled:hover span {
+  opacity: 0;
 }
 
 /* ACE SCIENCE */
@@ -1866,9 +1968,26 @@ body {
 }
 
 .quick-top a {
-  font-size: 1.8rem;
-  line-height: 1;
+  position: relative;
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 2rem;
   color: #fff;
+}
+
+.quick-top a::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -.3rem;
+  width: 0;
+  height: .7rem;
+  background-color: rgba(255, 255, 255, 0.3);
+  transition: all .4s ease-out;
+}
+
+.quick-top a:hover::before {
+  width: 100%;
 }
 
 .quick-bot {

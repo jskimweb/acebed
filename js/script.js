@@ -26,7 +26,7 @@ window.onload = function () {
     logo.stop().fadeIn(400);
   });
 
-  gnb02.find('.dep01 a').hover(function () {
+  gnb02.find('.dep01 a').mouseenter(function () {
     header.addClass('hover');
     gnb02.find('.dep02').show();
     logo.stop().fadeOut(400);
@@ -56,14 +56,14 @@ window.onload = function () {
   const allBtn = $('.all__btn');
   const allClose = $('.all__close');
   const allArea = $('.all-area');
-  const openAll = 'all-area--open';
+  const allAreaOpen = 'all-area--open';
 
   allBtn.click(function () {
-    allArea.addClass(openAll);
+    allArea.addClass(allAreaOpen);
     $('html, body').css('overflow', 'hidden');
   });
   allClose.click(function () {
-    allArea.removeClass(openAll);
+    allArea.removeClass(allAreaOpen);
     $('html, body').removeAttr('style');
   });
 
@@ -102,9 +102,9 @@ window.onload = function () {
   // ace science slide
   const swSciPg = $('.sw-sci__pg');
   const swSciPgs = [$('.sw-sci__pg01'), $('.sw-sci__pg02'), $('.sw-sci__pg03'), $('.sw-sci__pg04')];
-  const focusSwSciPg = 'sw-sci__pg--focused';
+  const swSciPgFocus = 'sw-sci__pg--focused';
   const sciTxt = $('.sci-txt-wrap p');
-  const showSciTxt = 'sci__txt--show';
+  const sciTxtshow = 'sci__txt--show';
 
   let sw_sci = new Swiper('.sw-sci', {
     speed: 1000,
@@ -116,28 +116,28 @@ window.onload = function () {
       slideChange: function () {
         switch (sw_sci.realIndex) {
           case 0:
-            swSciPg.removeClass(focusSwSciPg);
-            swSciPgs[0].addClass(focusSwSciPg);
-            sciTxt.removeClass(showSciTxt);
-            $('.sci-txt-wrap01 p').addClass(showSciTxt);
+            swSciPg.removeClass(swSciPgFocus);
+            swSciPgs[0].addClass(swSciPgFocus);
+            sciTxt.removeClass(sciTxtshow);
+            $('.sci-txt-wrap01 p').addClass(sciTxtshow);
             break;
           case 1:
-            swSciPg.removeClass(focusSwSciPg);
-            swSciPgs[1].addClass(focusSwSciPg);
-            sciTxt.removeClass(showSciTxt);
-            $('.sci-txt-wrap02 p').addClass(showSciTxt);
+            swSciPg.removeClass(swSciPgFocus);
+            swSciPgs[1].addClass(swSciPgFocus);
+            sciTxt.removeClass(sciTxtshow);
+            $('.sci-txt-wrap02 p').addClass(sciTxtshow);
             break;
           case 2:
-            swSciPg.removeClass(focusSwSciPg);
-            swSciPgs[2].addClass(focusSwSciPg);
-            sciTxt.removeClass(showSciTxt);
-            $('.sci-txt-wrap03 p').addClass(showSciTxt);
+            swSciPg.removeClass(swSciPgFocus);
+            swSciPgs[2].addClass(swSciPgFocus);
+            sciTxt.removeClass(sciTxtshow);
+            $('.sci-txt-wrap03 p').addClass(sciTxtshow);
             break;
           default:
-            swSciPg.removeClass(focusSwSciPg);
-            swSciPgs[3].addClass(focusSwSciPg);
-            sciTxt.removeClass(showSciTxt);
-            $('.sci-txt-wrap04 p').addClass(showSciTxt);
+            swSciPg.removeClass(swSciPgFocus);
+            swSciPgs[3].addClass(swSciPgFocus);
+            sciTxt.removeClass(sciTxtshow);
+            $('.sci-txt-wrap04 p').addClass(sciTxtshow);
         }
       }
     },
@@ -163,7 +163,7 @@ window.onload = function () {
     },
     observer: true,
     observeParents: true,
-    updateOnWindowResize:true,
+    updateOnWindowResize: true,
   });
 
   let sw_coll_reco = new Swiper('.sw-coll-reco', {
@@ -179,12 +179,12 @@ window.onload = function () {
     },
     observer: true,
     observeParents: true,
-    updateOnWindowResize:true,
+    updateOnWindowResize: true,
   });
 
   // ace collection slide show & hide
-  const focusCollMenu = 'coll__menu--focused';
-  
+  const collMenuFocus = 'coll__menu--focused';
+
   const collMenuNew = $('.coll__menu-new');
   const collNewSw = $('.coll-new-swiper');
   const swCollNewPrev = $('.sw-coll-new__prev');
@@ -197,38 +197,38 @@ window.onload = function () {
   const swCollRecoNext = $('.sw-coll-reco__next');
   const swCollRecoBar = $('.sw-coll-reco__bar');
 
-  const showSwCollBar = 'sw-coll__bar--show';
+  const swCollBarShow = 'sw-coll__bar--show';
 
   collMenuNew.click(function () {
-    $(this).addClass(focusCollMenu);
+    $(this).addClass(collMenuFocus);
     collNewSw.show();
     swCollNewPrev.show();
     swCollNewNext.show();
-    swCollNewBar.addClass(showSwCollBar);
-    collMenuReco.removeClass(focusCollMenu);
+    swCollNewBar.addClass(swCollBarShow);
+    collMenuReco.removeClass(collMenuFocus);
     collRecoSw.hide();
     swCollRecoPrev.hide();
     swCollRecoNext.hide();
-    swCollRecoBar.removeClass(showSwCollBar);
+    swCollRecoBar.removeClass(swCollBarShow);
   });
 
   collMenuReco.click(function () {
-    $(this).addClass(focusCollMenu);
+    $(this).addClass(collMenuFocus);
     collRecoSw.show();
     swCollRecoPrev.show();
     swCollRecoNext.show();
-    swCollRecoBar.addClass(showSwCollBar);
-    collMenuNew.removeClass(focusCollMenu);
+    swCollRecoBar.addClass(swCollBarShow);
+    collMenuNew.removeClass(collMenuFocus);
     collNewSw.hide();
     swCollNewPrev.hide();
     swCollNewNext.hide();
-    swCollNewBar.removeClass(showSwCollBar);
+    swCollNewBar.removeClass(swCollBarShow);
   });
 
   // news slide
   const swNewsPg = $('.sw-news__pg');
   const swNewsPgs = [$('.sw-news__pg01'), $('.sw-news__pg02'), $('.sw-news__pg03')];
-  const focusSwNewsPg = 'sw-news__pg--focused';
+  const swNewsPgFocus = 'sw-news__pg--focused';
 
   let sw_news = new Swiper('.sw-news', {
     speed: 1000,
@@ -236,16 +236,16 @@ window.onload = function () {
       slideChange: function () {
         switch (sw_news.realIndex) {
           case 0:
-            swNewsPg.removeClass(focusSwNewsPg);
-            swNewsPgs[0].addClass(focusSwNewsPg);
+            swNewsPg.removeClass(swNewsPgFocus);
+            swNewsPgs[0].addClass(swNewsPgFocus);
             break;
           case 1:
-            swNewsPg.removeClass(focusSwNewsPg);
-            swNewsPgs[1].addClass(focusSwNewsPg);
+            swNewsPg.removeClass(swNewsPgFocus);
+            swNewsPgs[1].addClass(swNewsPgFocus);
             break;
           default:
-            swNewsPg.removeClass(focusSwNewsPg);
-            swNewsPgs[2].addClass(focusSwNewsPg);
+            swNewsPg.removeClass(swNewsPgFocus);
+            swNewsPgs[2].addClass(swNewsPgFocus);
         }
       }
     },
@@ -254,8 +254,31 @@ window.onload = function () {
   $.each(swNewsPgs, function (index) {
     swNewsPgs[index].click(function () {
       sw_news.slideTo(index);
-      swNewsPg.removeClass(focusSwNewsPg);
-      swNewsPgs[index].addClass(focusSwNewsPg);
+      swNewsPg.removeClass(swNewsPgFocus);
+      swNewsPgs[index].addClass(swNewsPgFocus);
+    });
+  });
+
+  // navigation svg motion
+  const swPrev = [$('.sw-main__prev'), $('.sw-sci__prev'), $('.sw-coll-new__prev'), $('.sw-coll-reco__prev')];
+  const swNext = [$('.sw-main__next'), $('.sw-sci__next'), $('.sw-coll-new__next'), $('.sw-coll-reco__next')];
+  const swBtnDisabled = $('.swiper-button-disabled');
+
+  $.each(swPrev, function (index) {
+    swPrev[index].hover(function () {
+      if ($(this).hasClass('swiper-button-disabled')) return false;
+      $(this).find('path').attr('d', 'M 40 10 Q 10 65 40 140');
+    }, function () {
+      $(this).find('path').attr('d', 'M 40 10 Q 40 65 40 140');
+    });
+  });
+
+  $.each(swNext, function (index) {
+    swNext[index].hover(function () {
+      if ($(this).hasClass('swiper-button-disabled')) return false;
+      $(this).find('path').attr('d', 'M 10 10 Q 40 65 10 140');
+    }, function () {
+      $(this).find('path').attr('d', 'M 10 10 Q 10 65 10 140');
     });
   });
 
@@ -299,28 +322,28 @@ window.onload = function () {
 
   // scroll
   let lastScrTop = 0;
-  const hScrHide = 'header--scr-hide';
-  const hScrShow = 'header--scr-show';
+  const headerScrHide = 'header--scr-hide';
+  const headerScrShow = 'header--scr-show';
 
   const footerTop = $('.footer').offset().top;
   const winHeight = $(window).height();
   const sideBtn = $('.side-btn');
   const sideBtnAbs = 'side-btn--abs';
 
-  const showGoTop = 'go-top--show';
+  const goTopShow = 'go-top--show';
 
   $(window).scroll(function () {
     // header show & hide
     let winScrTop = $(window).scrollTop();
     if (lastScrTop < winScrTop) {
-      header.addClass(hScrHide);
-      header.removeClass(hScrShow);
+      header.addClass(headerScrHide);
+      header.removeClass(headerScrShow);
     } else {
       if (winScrTop == 0) {
-        header.removeClass(hScrShow);
+        header.removeClass(headerScrShow);
       } else {
-        header.addClass(hScrShow);
-        header.removeClass(hScrHide);
+        header.addClass(headerScrShow);
+        header.removeClass(headerScrHide);
       }
     }
     lastScrTop = winScrTop;
@@ -334,9 +357,9 @@ window.onload = function () {
 
     // go-top show & hide
     if (winScrTop > 0) {
-      goTop.addClass(showGoTop);
+      goTop.addClass(goTopShow);
     } else {
-      goTop.removeClass(showGoTop);
+      goTop.removeClass(goTopShow);
     }
   });
 };
