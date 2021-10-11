@@ -66,7 +66,7 @@ body {
   height: 15.5rem;
   background-color: #fff;
   padding: 0 8rem;
-  z-index: 999999;
+  z-index: 6;
   transition: all .4s ease-out;
 }
 
@@ -105,7 +105,7 @@ body {
   display: block;
   width: 18.2rem;
   height: 4.8rem;
-  z-index: 99;
+  z-index: 2;
 }
 
 .header-top {
@@ -115,7 +115,7 @@ body {
   justify-content: flex-end;
   width: 100%;
   padding: 2rem 0;
-  z-index: 99;
+  z-index: 2;
 }
 
 .header-top a {
@@ -176,7 +176,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  z-index: 9;
+  z-index: 1;
 }
 
 .gnb {
@@ -260,7 +260,7 @@ body {
   line-height: 2.5rem;
   white-space: nowrap;
   color: #666;
-  z-index: 9;
+  z-index: 1;
 }
 
 .dep02>a>span::before {
@@ -271,7 +271,7 @@ body {
   width: 0;
   height: .4rem;
   background-color: #d6eff8;
-  z-index: -9;
+  z-index: -1;
   transition: all .4s ease-out;
 }
 
@@ -289,7 +289,7 @@ body {
   font-size: 0;
   background: url("../images/gnb-srch-btn.png") no-repeat center;
   cursor: pointer;
-  z-index: 9;
+  z-index: 1;
 }
 
 .srch-area {
@@ -365,7 +365,7 @@ body {
   font-size: 0;
   background: url("../images/all-menu-btn.png") no-repeat center;
   cursor: pointer;
-  z-index: 9;
+  z-index: 1;
 }
 
 .all-area {
@@ -376,7 +376,7 @@ body {
   width: 100%;
   height: 100vh;
   background-color: #fff;
-  z-index: 99;
+  z-index: 2;
   transition: all .5s ease;
 }
 
@@ -396,7 +396,7 @@ body {
   display: block;
   font-size: 0;
   margin-bottom: 8rem;
-  z-index: 9;
+  z-index: 1;
 }
 
 .all-lang a {
@@ -473,7 +473,7 @@ body {
 .all-cate-txt {
   position: relative;
   display: flex;
-  z-index: 9;
+  z-index: 1;
 }
 
 .all-cate-main {
@@ -643,7 +643,7 @@ body {
   font-size: 0;
   background: url('../images/all-menu-x-btn.png') no-repeat center;
   cursor: pointer;
-  z-index: 99;
+  z-index: 2;
 }
 
 /* Contents */
@@ -730,7 +730,7 @@ body {
   background: none;
   border: 0;
   cursor: pointer;
-  z-index: 999;
+  z-index: 3;
 }
 
 .sw-coll-reco__prev {
@@ -801,7 +801,7 @@ body {
   background: none;
   border: 0;
   cursor: pointer;
-  z-index: 999;
+  z-index: 3;
 }
 
 .sw-coll-reco__next {
@@ -961,7 +961,7 @@ body {
   width: 30rem;
   height: 15rem;
   opacity: 1;
-  z-index: 9;
+  z-index: 1;
 }
 
 .sw-sci__pg {
@@ -994,7 +994,7 @@ body {
   display: block;
   width: 38.5rem;
   height: 100%;
-  z-index: 9;
+  z-index: 1;
 }
 
 .sci-txt-wrap {
@@ -1192,7 +1192,7 @@ body {
   left: 10rem;
   display: block;
   color: #fff;
-  z-index: 9;
+  z-index: 1;
   overflow: hidden;
   opacity: 0;
   transition: all 2s .5s;
@@ -1278,7 +1278,7 @@ body {
   font-weight: 500;
   line-height: 5rem;
   color: #fff;
-  z-index: 9;
+  z-index: 1;
 }
 
 .sw-coll-new__bar,
@@ -1684,7 +1684,7 @@ body {
   box-sizing: border-box;
   border: .1rem solid #d1d1d1;
   border-radius: .1rem;
-  z-index: -99;
+  z-index: -2;
 }
 
 .cs-link-box::after {
@@ -1698,7 +1698,7 @@ body {
   background-color: #0890c0;
   opacity: 0;
   transition: all .4s ease;
-  z-index: -9;
+  z-index: -1;
 }
 
 .cs-link-box:hover::after {
@@ -1748,7 +1748,7 @@ body {
   right: 0;
   bottom: 0;
   display: block;
-  z-index: 999;
+  z-index: 3;
 }
 
 .side-btn--abs {
@@ -1907,8 +1907,8 @@ body {
   display: none;
   width: 100%;
   background-color: #000;
-  padding: 1.4rem .2rem;
-  z-index: 9;
+  padding: 1.4rem 2rem;
+  z-index: 1;
 }
 
 .family-link-list {
@@ -1944,7 +1944,7 @@ body {
   right: -100%;
   bottom: 0;
   width: 28rem;
-  z-index: 9999;
+  z-index: 4;
   transition: all .3s;
 }
 
@@ -2042,5 +2042,5 @@ body {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
-  z-index: 999;
+  z-index: 3;
 }
